@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.android.liba.ui.widget.StatusBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_of_title">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="@dimen/height_of_title"
+                    android:layout_height="@dimen/height_of_title"
+                    android:scaleType="centerInside"
+                    android:src="@mipmap/icon_back" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textSize="18sp"
+                    android:textColor="@color/C_333333"
+                    tools:text="标题" />
+            </FrameLayout>
+
+            <com.scwang.smart.refresh.layout.SmartRefreshLayout
+                android:id="@+id/sRefreshLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.gys.play.util.CustomHead.MyClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <com.gys.play.util.CustomHead.MyClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</layout>

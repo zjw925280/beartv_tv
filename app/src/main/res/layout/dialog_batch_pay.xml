@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/shape_rect_ffffff_12"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/icon_close_1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/batch_pay"
+                android:textColor="@color/black_353535"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/batch_pay_one"
+                android:textColor="@color/gray_9f9f9f"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_pay_ten"
+                android:layout_width="110dp"
+                android:layout_height="44dp"
+                android:background="@drawable/shape_rect_ffffff_9f9f9f_5"
+                android:gravity="center"
+                android:text="@string/follow_chapter"
+                android:textColor="@color/black_353535"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:text="@string/the_follow"
+                android:textColor="@color/black_353535"
+                android:textSize="16sp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_custom"
+                android:layout_width="70dp"
+                android:layout_height="44dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/shape_rect_ffffff_bb86ff_5_w_1">
+
+                <EditText
+                    android:id="@+id/et_chapter_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:gravity="center"
+                    android:textColor="@color/C_bb86ff"
+                    android:textSize="16sp"></EditText>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/chapter"
+                android:textColor="@color/black_353535"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cur_user"
+                android:textColor="@color/gray_9f9f9f"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_coins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray_9f9f9f"
+                android:textSize="16sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_shubi"
+                android:textColor="@color/C_353535"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_total_coins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/C_FB3535"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_batch_pay"
+                android:layout_width="192dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="26dp"
+                android:background="@drawable/shape_rect_1c1a1e_22"
+                android:gravity="center"
+                android:text="@string/sure_buy"
+                android:textColor="@color/fbbc35"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

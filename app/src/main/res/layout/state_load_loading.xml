@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/retry_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.mybase.libb.widget.MiniLoadingView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:mlv_loading_view_color="@color/C_52576B"
+            app:mlv_loading_view_size="40dp" />
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="奋力加载中&gt; &lt;"
+            android:textColor="@color/C_52576B"
+            android:textSize="13dp" />
+
+        <View
+            android:id="@+id/bottom"
+            android:layout_width="1dp"
+            android:layout_height="100dp" />
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.activity.myticket.GetMonthlyTicketExplainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <ImageView
+                    android:id="@+id/itemTopBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:padding="@dimen/dp_10"
+                    android:src="@mipmap/icon_back" />
+
+                <TextView
+                    android:id="@+id/itemTopTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/help_feed"
+                    android:textColor="@color/black_353535"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/itemTopRight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin"
+                    android:gravity="center"
+                    android:src="@mipmap/icon_kf" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="15dp"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="19dp"
+                android:background="@drawable/shape_half_rect_ffffff_16"
+                android:layout_marginBottom="32dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:text="@string/choose_qusetion"
+                        android:textColor="@color/C_333333"
+                        android:textSize="15sp" />
+
+                    <com.android.liba.ui.widget.conner.BackgroundLinearLayout
+                        android:id="@+id/btn_fankuitype"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        app:lineColor="@color/C_E5E5E5"
+                        app:lineWidth="1dp"
+                        app:connerHalfHeight="true"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/et_fankuitype"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginEnd="13dp"
+                            android:layout_marginBottom="9dp"
+                            android:layout_weight="1"
+                            android:background="@color/transparent"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center_vertical"
+                            android:hint="@string/choose"
+                            android:textColor="@color/C_333333"
+                            android:textColorHint="@color/gray_9f9f9f"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:src="@mipmap/icon_top" />
+                    </com.android.liba.ui.widget.conner.BackgroundLinearLayout>
+                </LinearLayout>
+
+                <com.android.liba.ui.widget.conner.BackgroundEditText
+                    android:id="@+id/et_fankui_context"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    app:bgColor="@color/C_f2f2f2"
+                    app:conner="8dp"
+                    android:minHeight="150dp"
+                    android:padding="15dp"
+                    android:background="@color/transparent"
+                    android:gravity="top"
+                    android:hint="@string/enter_question"
+                    android:textColor="@color/black_353535"
+                    android:textColorHint="@color/C_CECECE"
+                    android:textCursorDrawable="@drawable/cursor"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginRight="14dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add_pics"
+                            android:textColor="@color/black_353535"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tv_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="(0/3)"
+                            android:layout_marginLeft="5dp"
+                            android:textColor="@color/black_353535"
+                            android:textSize="13sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:id="@+id/fankui_img_1"
+                            android:layout_width="84dp"
+                            android:layout_height="84dp"
+                            android:layout_marginEnd="12dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/iv_fankui_img_1"
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/iv_fankui_img_1_del"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@mipmap/icon_tj" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/fankui_img_2"
+                            android:layout_width="84dp"
+                            android:layout_height="84dp"
+                            android:layout_marginEnd="12dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/iv_fankui_img_2"
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/iv_fankui_img_2_del"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@mipmap/icon_tj" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/fankui_img_3"
+                            android:layout_width="84dp"
+                            android:layout_height="84dp"
+                            android:layout_marginEnd="12dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/iv_fankui_img_3"
+                                android:layout_width="84dp"
+                                android:layout_height="84dp"
+                                android:scaleType="centerCrop" />
+
+                            <ImageView
+                                android:id="@+id/iv_fankui_img_3_del"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:src="@mipmap/icon_tj" />
+                        </RelativeLayout>
+
+                        <com.android.liba.ui.widget.conner.BackgroundFrameLayout
+                            android:id="@+id/btnAddImg"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            app:bgColor="@color/C_f2f2f2"
+                            app:conner="8dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/icon_jj"/>
+
+                        </com.android.liba.ui.widget.conner.BackgroundFrameLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:visibility="gone"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@drawable/shape_rect_f7f7f7_5">
+
+                        <EditText
+                            android:id="@+id/et_user_phone_or_qq"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/dp_10"
+                            android:layout_marginEnd="@dimen/dp_10"
+                            android:layout_marginRight="10dp"
+                            android:background="@color/transparent"
+                            android:gravity="center_vertical"
+                            android:hint="@string/enter_email"
+                            android:inputType="number"
+                            android:maxLength="30"
+                            android:maxLines="1"
+                            android:textColor="@color/black_353535"
+                            android:textColorHint="@color/gray_9f9f9f"
+                            android:textCursorDrawable="@drawable/cursor"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/btn_fankuicommit"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/btn_n"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

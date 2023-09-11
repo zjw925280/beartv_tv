@@ -1,0 +1,311 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+//    id 'kotlin-android-extensions'
+
+    id 'com.google.gms.google-services'
+//    监控模块
+    id 'com.google.firebase.firebase-perf'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.gys.play"
+        minSdk 21
+        targetSdk 33
+        versionCode 6
+        versionName "1.0.5"
+        multiDexEnabled true
+
+        manifestPlaceholders = [googleAdAppId: "ca-app-pub-1234567891234567~1234567811"]
+        flavorDimensions "versionCode"
+
+        resValue "string", "facebook_application_id", "\"" + facebook_application_id + "\""
+        resValue "string", "facebook_login_protocol_scheme", "\"" + facebook_login_protocol_scheme + "\""
+
+        setProperty("archivesBaseName", "play-${versionCode}")
+
+    }
+
+    signingConfigs {
+        release {
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+            storeFile new File(rootProject.projectDir, RELEASE_STORE_FILE)
+            storePassword RELEASE_STORE_PASSWORD
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.getAssembleProvider().configure() {
+            it.doLast {
+                variant.outputs.all { out ->
+                    // 输出目录在：项目目录/build/apk/debug/目录下
+                    def outputPath = [project.rootDir.absolutePath, "build", "apk", variant.buildType.name].join(File.separator)
+                    copy {
+                        from out.outputFile
+                        into outputPath
+                    }
+                }
+            }
+        }
+        variant.outputs.all { output ->
+            def channel = "plugin"
+            if (variant.productFlavors != null && variant.productFlavors.size() > 0) {
+                channel = variant.productFlavors[0].name
+            }
+            outputFileName = "play_${channel}_${versionCode}.apk"
+        }
+    }
+
+    productFlavors {
+        google {
+        }
+    }
+    buildTypes {
+        debug {
+            debuggable true
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+    bundle {
+        language {
+// 指定google play发布aab格式包语言资源不进行分包处理 否则会造成切换语言失效，因为语言资源被分包，安装的时候又没被集合进去，导致缺语言包
+            enableSplit = false
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', "*.aar"], dir: 'libs')
+
+//    implementation files('libs/my.aar')
+//    implementation files('libs/base.aar')
+
+    implementation project(':lib_a')
+    implementation project(':lib_b')
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.activity:activity-ktx:$rootProject.activityVersion"
+
+    // Room components
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.lifecycleVersion"
+
+    // Kotlin components
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:$rootProject.coroutines"
+
+    // UI
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+
+    api "com.github.bumptech.glide:glide:4.12.0"
+    kapt "com.github.bumptech.glide:compiler:4.12.0"
+
+    //google login
+    // Also declare the dependency for the Google Play services library and specify its version
+//    implementation 'com.google.android.gms:play-services-auth:19.2.0'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    //google play
+    implementation "com.android.billingclient:billing-ktx:4.0.0"
+    implementation "com.youth.banner:banner:2.1.0"
+
+    implementation 'jp.wasabeef:glide-transformations:4.1.0'//高斯模糊
+
+    //图片选择
+    implementation 'io.github.lucksiege:pictureselector:v2.7.3-rc06'
+
+    //侧滑菜单
+    implementation 'com.yanzhenjie.recyclerview:x:1.3.2'
+
+    //appsflyer SDK
+    implementation 'com.appsflyer:af-android-sdk:6.2.3@aar'
+    implementation 'com.appsflyer:oaid:6.2.4'
+    implementation 'com.huawei.hms:ads-identifier:3.4.39.302'
+
+    implementation 'com.appsflyer:af-android-sdk:6.3.2'
+
+
+    //跑马灯文字展示
+    implementation 'com.sunfusheng:MarqueeView:1.4.1'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+    implementation 'com.linecorp:linesdk:5.0.1'
+
+    implementation 'com.github.liangjingkanji:BRV:1.3.77'
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
+
+    implementation 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-java:v8.3.4-release-jitpack'
+    //是否需要ExoPlayer模式
+    implementation 'com.github.CarGuo.GSYVideoPlayer:GSYVideoPlayer-exo2:v8.3.4-release-jitpack'
+
+    implementation 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-armv7a:v8.3.4-release-jitpack'
+    implementation 'com.github.CarGuo.GSYVideoPlayer:gsyVideoPlayer-arm64:v8.3.4-release-jitpack'
+
+    implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
+    implementation 'io.github.razerdp:BasePopup:3.2.0'
+
+    implementation 'com.adjust.sdk:adjust-android:4.28.9'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+    implementation 'com.android.installreferrer:installreferrer:2.2'
+
+    implementation 'com.github.MZCretin:ExpandableTextView:v1.6.1-x'
+
+
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0'
+
+//    ------------------ firebase start ----------------
+    // Import the Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:30.2.0')
+
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+
+    // Declare the dependency for the Firebase SDK for Google Analytics
+    api 'com.google.firebase:firebase-analytics-ktx'
+
+    // Declare the dependencies for any other desired Firebase products
+    // For example, declare the dependencies for Firebase Authentication and Cloud Firestore
+    api('com.google.firebase:firebase-auth-ktx:21.0.6') {
+        exclude group: 'com.google.android.gms:play-services-safetynet:17.0.0'
+    }
+    api 'com.google.android.gms:play-services-safetynet:18.0.1'
+    api 'com.google.firebase:firebase-firestore-ktx'
+    //监控模块
+    api 'com.google.firebase:firebase-perf-ktx'
+    //登录相关
+    api 'com.firebaseui:firebase-ui-auth:7.2.0'
+    api 'com.facebook.android:facebook-android-sdk:12.+'
+
+    //Cloud Message
+    api 'com.google.firebase:firebase-core:21.0.0'
+    api 'com.google.firebase:firebase-messaging:23.0.6'
+    api 'com.google.firebase:firebase-measurement-connector:20.0.0'
+    //    ------------------ firebase end ----------------
+
+    //    ------------------ mylibrary start ----------------
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    api 'com.blankj:utilcodex:1.31.0'
+    api 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+    api 'io.github.jeremyliao:live-event-bus-x:1.8.0'
+    api 'com.github.getActivity:XXPermissions:16.2'
+
+//    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6'
+
+    api 'com.github.EspoirX:KvPref:v1.4'
+
+    // 协程
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
+    api 'com.github.liangjingkanji:BRV:1.3.86'
+
+    api 'com.github.jccppp:launchac:1.2.0'
+
+    api 'com.github.chenBingX:SuperTextView:3.2.6.99'
+    api 'com.github.lihangleo2:ShadowLayout:3.3.2'
+    api 'com.github.jccppp:JustDialog:0.0.2'
+
+    implementation "com.github.bumptech.glide:glide:4.13.2"
+
+    def rxhttp_version = '3.0.0'
+    api 'com.squareup.okhttp3:okhttp:4.10.0'
+    api "com.github.liujingxing.rxhttp:rxhttp:$rxhttp_version"
+//    kapt "com.github.liujingxing.rxhttp:rxhttp-compiler:$rxhttp_version"
+
+    api 'com.github.Justson.AgentWeb:agentweb-core:v5.0.6-androidx'
+    //    ------------------ mylibrary end ----------------
+
+
+//    -------------------baselib start ---------------
+    api "androidx.multidex:multidex:2.0.1"
+    api 'com.alibaba:arouter-api:1.5.1'
+    api 'org.jetbrains:annotations:20.1.0'
+//    kapt 'com.alibaba:arouter-compiler:1.5.1'
+    api 'com.tencent:mmkv-static:1.2.7'
+    //RxJava
+    api "io.reactivex.rxjava2:rxjava:2.2.18"
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    api "com.squareup.okhttp3:okhttp:4.9.0"
+    api "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    //Retrofit网络请求
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.7.2'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    api 'me.jessyan:retrofit-url-manager:1.4.0'
+    //icepick
+    api 'frankiesardo:icepick:3.2.0'
+    kapt 'frankiesardo:icepick-processor:3.2.0'
+    //glide图片框架
+    api "com.github.bumptech.glide:glide:4.12.0"
+//    kapt "com.github.bumptech.glide:compiler:4.12.0"
+    api 'com.github.bumptech.glide:okhttp3-integration:4.12.0'
+    //解决Glide找不到Android声明库问题
+    //下载库
+    api 'com.arialyy.aria:core:3.8.15'
+//    kapt 'com.arialyy.aria:compiler:3.8.15'
+    api 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    api 'io.github.scwang90:refresh-header-material:2.0.5'
+    api 'io.github.scwang90:refresh-footer-classics:2.0.5'
+    api 'io.github.scwang90:refresh-header-classics:2.0.5'
+    //权限
+    api 'com.permissionx.guolindev:permissionx:1.4.0'
+    api 'com.alibaba:fastjson:1.2.75'
+    api 'androidx.annotation:annotation:1.3.0'
+//    kapt 'androidx.annotation:annotation:1.3.0'
+    api 'androidx.appcompat:appcompat:1.4.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.3'
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android:+'
+    //动画加载
+    api 'com.airbnb.android:lottie:4.2.1'
+//    -------------------baselib end ---------------
+
+}

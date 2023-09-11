@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvHover"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:paddingVertical="18dp"
+    android:paddingLeft="18dp"
+    android:textStyle="bold"
+    android:text="@string/detail_like"
+    android:textColor="@color/date_picker_text_dark"
+    android:textSize="18dp" />

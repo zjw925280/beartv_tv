@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_enabled="true"
+        android:drawable="@drawable/shape_rect_ffffff_stroke_cecece_10f"/>
+    <item
+        android:state_enabled="false"
+        android:drawable="@drawable/shape_rect_e0e0e0_stroke_e0e0e0_10f"/>
+    <item
+        android:drawable="@drawable/shape_rect_ffffff_stroke_cecece_10f"/>
+</selector>

@@ -1,0 +1,6 @@
+include ':app'
+
+file("Iplay").eachDir {dir->
+    include ":${dir.name}"
+    project(":${dir.name}").projectDir=dir
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/back"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/topText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="18dp"
+                android:textStyle="bold"
+                android:text="@string/rank_list"
+                android:textColor="@color/C_333333"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rV"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/lookAll"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="@dimen/margin"
+                android:gravity="center"
+                android:paddingLeft="29dp"
+                android:paddingRight="29dp"
+                android:text="@string/look_all"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</layout>

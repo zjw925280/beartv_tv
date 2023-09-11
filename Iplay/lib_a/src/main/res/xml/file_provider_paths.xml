@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <paths>
+
+        <!--表示设备的根目录(new File("/"))-->
+        <root-path name="root" path="" />
+        <!--表示context.getFileDir()-->
+        <files-path name="files" path="" />
+        <!--表示context.getCacheDir()-->
+        <cache-path name="cache" path="" />
+        <!--表示Environment.getExternalStorageDirectory()-->
+        <external-path name="external" path="" />
+        <!--表示context.getExternalFilesDirs()-->
+        <external-files-path name="name" path="path" />
+        <!--表示getExternalCacheDirs()-->
+        <external-cache-path name="cachex" path="path" />
+
+    </paths>
+</resources>
+

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_f7f7f7"
+        android:orientation="vertical"
+        tools:context=".pro.ui.detail.FabPingLunActivity">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
+
+            <RelativeLayout
+                android:id="@+id/rl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="16dp"
+                    android:src="@mipmap/icon_back"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/fab_pingfen"
+                android:textColor="@color/black_353535"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_rect_ffffff_top_left_right_12"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="84dp"
+                android:layout_height="112dp"
+                android:layout_marginTop="34dp">
+
+                <ImageView
+                    android:id="@+id/img_ping_fen"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/img_yiny"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/black_353535"
+                android:textSize="16sp"/>
+
+            <com.gys.play.ui.view.star.RatingBarCustom
+                android:id="@+id/rb_ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:rbc_max="5"
+                app:rbc_num="0"
+                app:rbc_spacing="12dp"
+                app:rbc_star_n="@mipmap/icon_xing3"
+                app:rbc_star_p="@mipmap/icon_xing" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+<!--                <View-->
+<!--                    android:layout_width="64dp"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:background="@color/C_ECECEC"/>-->
+
+                <TextView
+                    android:id="@+id/tv_star_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/dianji_star"
+                    android:textColor="@color/gray_9f9f9f"
+                    android:textSize="15sp"/>
+
+<!--                <View-->
+<!--                    android:layout_width="64dp"-->
+<!--                    android:layout_height="1dp"-->
+<!--                    android:background="@color/C_ECECEC"/>-->
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_pingfen"
+                android:layout_width="match_parent"
+                android:layout_height="129dp"
+                android:layout_marginLeft="29dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="29dp"
+                android:background="@drawable/shape_rect_f7f7f7_12"
+                android:gravity="top"
+                android:hint="@string/fab_pingfen_tip"
+                android:padding="15dp"
+                android:textColor="@color/black_353535"
+                android:textColorHint="@color/gray_9f9f9f"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_fabu"
+                android:layout_width="257dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="30dp"
+                android:alpha="0.6"
+                android:background="@drawable/shape_rect_gradual_22"
+                android:gravity="center"
+                android:text="@string/fab"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

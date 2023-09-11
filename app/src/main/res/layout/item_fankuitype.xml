@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/fankui_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rect_ffffff_0_eeeeee_line_1"
+        android:paddingStart="13dp"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:text="@string/choose"
+        android:textColor="#ff222222"
+        android:textSize="15sp" />
+</layout>

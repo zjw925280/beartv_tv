@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F6F9FB"
+        android:orientation="vertical"
+        tools:context=".pro.ui.VipOpenRecordActivity">
+
+        <LinearLayout
+            android:id="@+id/include2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/left"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
+            <include
+                layout="@layout/item_top_title"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_rect_ffffff_top_12"
+            app:layout_constraintBottom_toBottomOf="@id/tab_layout"
+            app:layout_constraintTop_toTopOf="@id/tab_layout" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="1dp"
+            android:paddingVertical="5dp"
+            android:textSize="15sp"
+            app:layout_constraintTop_toBottomOf="@+id/include2"
+            app:tabGravity="center"
+            app:tabIndicator="@drawable/calculator_tab_indicator_shape"
+            app:tabIndicatorColor="#00ACFF"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabMode="fixed"
+            app:tabRippleColor="@android:color/transparent"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

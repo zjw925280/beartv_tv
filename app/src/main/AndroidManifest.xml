@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.gys.play">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<!--    <uses-permission android:name="com.google.android.gms.permission.AD_ID" /> &lt;!&ndash; 如果您针对的是 Android 13 及更高版本 (API level 33)，则需要添加com.google.android.gms.AD_ID许可来读取设备的广告 ID。 &ndash;&gt;-->
+    <!-- <uses-permission android:name="com.google.android.gms.permission.AD_ID"/> -->
+
+    <!--    上架谷歌要去掉 安装权限-->
+<!--    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />-->
+    <!--    <uses-permission-->
+    <!--        android:name="android.permission.REQUEST_INSTALL_PACKAGES"-->
+    <!--        tools:node="remove" />-->
+
+    <!--Android Q之后不需要存储权限，完全使用MediaStore API来实现-->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"
+        tools:ignore="ScopedStorage" />
+
+
+    <application
+        android:name="com.gys.play.MyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/logo_conner"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/logo_circle"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.App"
+        tools:replace="android:allowBackup">
+
+        <activity
+            android:name="com.gys.play.ui.video.VideoListActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements" />
+
+        <activity
+            android:name="com.gys.play.AuthorWebActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.gys.play.ui.VipOpenRecordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.gys.play.ui.HistoryListActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.gys.play.ui.GoldOpenRecordActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.gys.play.WebActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.gys.play.ui.helpfeedback.HelpAndFeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.gys.play.ui.rank.RankActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.gys.play.ui.search.SearchActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.gys.play.ui.launch.LaunchActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/LaunchTheme1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.gys.play.MainActivity"
+            android:configChanges="uiMode"
+            android:exported="true"
+            android:label="MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 深度链接  facebook 地址 play://{applicationId}/deeplink  例子   play://beet-tv"/deeplink?bookId=1&chapterId=2 -->
+                <data
+                    android:host="beet-tv"
+                    android:pathPrefix="/deeplink"
+                    android:scheme="play" />
+                <data
+                    android:host="www.beet-tv.com"
+                    android:pathPrefix="/deeplink"
+                    android:scheme="http" />
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.gys.play.ui.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.ReportActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.UserInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.RechargeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.VIPActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.PhoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.comment.CommentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.comment.MyCommentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.ui.AccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.gys.play.fragment.book_city.NovelStyleMoreActivity"
+            android:screenOrientation="portrait" />
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <!-- 元数据 -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+
+
+        <service
+            android:name="com.gys.play.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

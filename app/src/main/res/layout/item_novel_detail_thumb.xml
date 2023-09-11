@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.gys.play.entity.BtVideoInfo" />
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/thumb"
+            android:layout_width="148dp"
+            android:layout_height="196dp"
+            tools:src="@drawable/bg_debug"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:loadImageCenterCropWith4Radius="@{item.cover}" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="15dp"
+            android:src="@mipmap/vip_vip"
+            android:visibility="@{item.isVip()?View.VISIBLE:View.GONE}"
+            app:layout_constraintTop_toTopOf="@id/thumb"
+            app:layout_constraintLeft_toLeftOf="@id/thumb"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

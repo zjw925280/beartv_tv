@@ -1,0 +1,107 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 32
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
+
+        /* javaCompileOptions {
+             annotationProcessorOptions {
+                 arguments = [AROUTER_MODULE_NAME: "common"]
+             }
+         }*/
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        official {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding true
+    }
+
+}
+allprojects {
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+        options.addStringOption('charSet', 'UTF-8')
+    }
+}
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    api "androidx.multidex:multidex:2.0.1"
+    api 'com.alibaba:arouter-api:1.5.1'
+    api 'org.jetbrains:annotations:20.1.0'
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+    api 'com.tencent:mmkv-static:1.2.7'
+    //RxJava
+    api "io.reactivex.rxjava2:rxjava:2.2.18"
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+
+    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    api "com.squareup.okhttp3:okhttp:4.9.0"
+    api "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    //Retrofit网络请求
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.7.2'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    api 'me.jessyan:retrofit-url-manager:1.4.0'
+    //icepick
+    api 'frankiesardo:icepick:3.2.0'
+    kapt 'frankiesardo:icepick-processor:3.2.0'
+    //glide图片框架
+    api "com.github.bumptech.glide:glide:4.12.0"
+    kapt "com.github.bumptech.glide:compiler:4.12.0"
+    api 'com.github.bumptech.glide:okhttp3-integration:4.12.0'
+    //解决Glide找不到Android声明库问题
+    //下载库
+    api 'com.arialyy.aria:core:3.8.15'
+    kapt 'com.arialyy.aria:compiler:3.8.15'
+    api 'io.github.scwang90:refresh-layout-kernel:2.0.5'
+    api 'io.github.scwang90:refresh-header-material:2.0.5'
+    api 'io.github.scwang90:refresh-footer-classics:2.0.5'
+    api 'io.github.scwang90:refresh-header-classics:2.0.5'
+    //权限
+    api 'com.permissionx.guolindev:permissionx:1.4.0'
+    api 'com.alibaba:fastjson:1.2.75'
+    api 'androidx.annotation:annotation:1.3.0'
+    kapt 'androidx.annotation:annotation:1.3.0'
+    api 'androidx.appcompat:appcompat:1.4.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.3'
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android:+'
+    //动画加载
+    api 'com.airbnb.android:lottie:4.2.1'
+}
+//apply from: 'aar_maven.gradle'

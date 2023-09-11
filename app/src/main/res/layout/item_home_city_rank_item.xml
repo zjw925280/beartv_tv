@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.gys.play.entity.BtVideoInfo" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp"
+        android:onClick="@{(view)-> item.goBookDetail(view)}">
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginTop="18dp"
+            android:layout_marginRight="12dp"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="73dp"
+            app:loadImageCenterCropWith4Radius="@{item.cover}" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_weight="1"
+                android:maxLines="2"
+                android:text="@{item.title}"
+                android:textColor="@color/black_353535"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:textEditSideNoPasteWindowLayout="@color/C_828282"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.liba">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+
+        <meta-data
+            android:name="notch.config"
+            android:value="nosensor|portrait|landscape"
+            tools:replace="android:value"/>
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="3"
+            tools:replace="android:value"/>
+        <meta-data
+            android:name="android.vendor.full_screen"
+            android:value="true"
+            tools:replace="android:value"/>
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true"
+            tools:replace="android:value" />
+
+        <!--7.0+在将文件提交给APP外使用时，需求Uri通过FileProvider。比如系统裁剪图片，比如安装-->
+        <provider
+            android:name="com.android.liba.provider.JiuJieProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths"
+                tools:replace="android:resource" />
+        </provider>
+
+    </application>
+
+</manifest>

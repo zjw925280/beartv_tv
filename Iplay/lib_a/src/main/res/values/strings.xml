@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">BaseApplication</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="loading_dialog">正在加载中...</string>
+    <string name="error_server_unknown">服务器连接失败</string>
+    <string name="error_unknown">未知异常</string>
+    <string name="no_network">请求连接超时,请检查当前网络</string>
+    <string name="loading_error_empty">这里啥也没有</string>
+    <string name="loading_more_no_data">""</string>
+    <string name="loading_more_error_default">未知异常,请点击重试</string>
+    <string name="loading_error_net">您的网络走丢了</string>
+    <string name="loading_more">正在加载中</string>
+    <string name="loading_error_retry">重试</string>
+    <string name="dialog_sure">确定</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="dialog_title">温馨提示</string>
+    <string name="dialog_agreement_privacy">个人隐私保护概要</string>
+    <string name="dialog_agreement_welcome">欢迎使用</string>
+    <string name="dialog_agreement_content_one">！我们非常注重保护用户个人信息及个人隐私，请您使用前详阅</string>
+    <string name="dialog_agreement_content_two">《用户协议》</string>
+    <string name="dialog_agreement_content_three">及</string>
+    <string name="dialog_agreement_content_four">《隐私政策》</string>
+    <string name="dialog_agreement_content_five">各条款信息，如你同意，请点击“同意”开始接受我们的服务。</string>
+    <string name="permission_sd_no">需要手机存储权限才能使用该功能哦, 请在应用管理中打开“手机存储”访问权限！</string>
+    <string name="dialog_agree_no">不同意</string>
+    <string name="dialog_agree_yes">同意并继续</string>
+    <string name="setting_to_login">去登录</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="input_phone_num">请输入手机号</string>
+    <string name="input_pwd">请输入密码</string>
+    <string name="get_code">(获取验证码)</string>
+
+    <string name="sure_cancel_account">确定注销</string>
+    <string name="mine">我的</string>
+    <string name="set_cancel_account">注销账号</string>
+    <string name="cancel_account_content">清空当前登录账号所有信息，包含金币，改操作不可撤销，是否确定？</string>
+
+
+    <string name="jj_download_path_excpt">下载地址异常</string>
+    <string name="jj_save_path_excpt">存储路径异常</string>
+    <string name="jj_create_file_failed">文件夹创建失败</string>
+    <string name="jj_file_handle_excpt">文件处理异常</string>
+    <string name="http_error">网络异常，请检查您的网络</string>
+    <string name="jj_download_excpt">下载异常</string>
+    <string name="jj_file_create_failed">文件创建失败</string>
+    <string name="jj_unfound_file_data">没有找到文件数据</string>
+    <string name="jj_file_trans_save_failed">文件转存失败</string>
+</resources>

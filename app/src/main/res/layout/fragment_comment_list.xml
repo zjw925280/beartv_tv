@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.gys.play.ui.view.PlayRefreshView
+            android:id="@+id/prv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layout_item="@layout/item_comment" />
+
+        <LinearLayout
+            android:id="@+id/llComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#D8D8D8" />
+
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/tvInput"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:paddingLeft="22dp"
+                android:paddingRight="10dp"
+                android:text="發表評論，分享我的看法"
+                android:textColor="@color/C_333333"
+                android:textColorHint="#ff52576b"
+                android:textSize="13dp"
+                app:stv_corner="17dp"
+                app:stv_solid="#F6F9FB" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

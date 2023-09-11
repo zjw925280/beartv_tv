@@ -1,0 +1,11 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gys.play",
+      "sha256_cert_fingerprints":
+      ["DE:74:A9:F2:97:10:59:B2:05:3D:0C:09:A5:E9:FD:84:CE:C0:47:BD:C4:5E:0A:19:F5:F8:1E:FB:A3:D1:56:13"]
+    }
+  }
+]

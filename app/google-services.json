@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1052291294177",
+    "project_id": "beartv-7aa54",
+    "storage_bucket": "beartv-7aa54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052291294177:android:1e048931e5fc4eae4528a0",
+        "android_client_info": {
+          "package_name": "com.gys.play"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052291294177-dbr1l33hofuodstfe68ci8oqukjtbk7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gys.play",
+            "certificate_hash": "4a8ca01e2d1e3c4aa59b8d811e441a0e1a795f3f"
+          }
+        },
+        {
+          "client_id": "1052291294177-ako08308ao7e4d6tfc0vk1td5f68jc74.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBALIjvh6eQ_IctwMF1xIzoQcmAxvkUYa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052291294177-ako08308ao7e4d6tfc0vk1td5f68jc74.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

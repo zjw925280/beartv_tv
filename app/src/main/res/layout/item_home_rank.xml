@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/shape_rect_ffffff_12"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="83dp"
+            android:background="@mipmap/img_phb"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_weight="1"
+                    android:text="@string/rank_list"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_go_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="7dp"
+                        android:text="@string/more_rank"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/icon_more_b"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.android.liba.ui.widget.tabLayout.SlidingTabLayout
+                android:id="@+id/seg_tab"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                app:tl_indicator_anim_enable="false"
+                app:tl_indicator_color="@color/black_353535"
+                app:tl_indicator_height="2dp"
+                app:tl_indicator_width="19dp"
+                app:tl_indicator_width_equal_title="true"
+                app:tl_tab_space_equal="false"
+                app:tl_textSelectColor="@color/black_353535"
+                app:tl_textUnselectColor="@color/C_434343"
+                app:tl_indicator_corner_radius="1.5dp"
+                app:tl_textsize="14sp" />
+        </LinearLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_view"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginLeft="14dp" />
+    </LinearLayout>
+</layout>

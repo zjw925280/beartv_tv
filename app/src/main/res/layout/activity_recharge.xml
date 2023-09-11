@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+
+        <com.android.liba.ui.widget.StatusBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F6F9FB" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#F6F9FB">
+
+            <ImageView
+                android:id="@+id/itemTopBack"
+                android:layout_width="@dimen/height_of_title"
+                android:layout_height="@dimen/height_of_title"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_back" />
+
+            <TextView
+                android:id="@+id/itemTopTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxWidth="200dp"
+                android:maxLines="1"
+                android:text="@string/about_book_coins"
+                android:textColor="#06133C"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/itemTopRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/margin"
+                android:gravity="center"
+                android:text="@string/recharge_record"
+                android:textColor="#52576B"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+
+        <com.android.liba.ui.widget.conner.BackgroundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:bgColor="@color/white"
+            app:conner_left_top="10dp"
+            app:conner_right_top="10dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/srcollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="14dp"
+                        android:background="#F6F9FB">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="14dp"
+                            android:background="@drawable/shape_rect_ffffff_top_8" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:text="@string/current_balance"
+                            android:textColor="#52576B"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="7dp"
+                            android:text="0"
+                            android:textColor="#52576B"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:text="@string/read_pay_content_three"
+                            android:textColor="#52576B"
+                            android:textSize="15sp" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/firstImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="113dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/img_sbcz" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="13dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/shape_rect_ffffff_top_12" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/choose_item"
+                        android:textColor="@color/C_333333"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:descendantFocusability="blocksDescendants"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_first_pay"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/playType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:layout_marginTop="19dp"
+                        android:text="@string/payment_method"
+                        android:textColor="@color/C_18171F"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/rv"
+                        app:layout_constraintTop_toBottomOf="@+id/rv" />
+
+                    <com.lihang.ShadowLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginHorizontal="14dp"
+                        android:layout_marginTop="18dp"
+                        app:hl_cornerRadius="8dp"
+                        app:hl_layoutBackground="@color/white">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginHorizontal="15dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/googlePay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@mipmap/icon_pay" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="15dp"
+                                android:layout_weight="1"
+                                android:text="Google pay"
+                                android:textColor="@color/C_333333"
+                                android:textSize="15sp" />
+
+                            <ImageView
+                                android:id="@+id/img_sel_pay"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@mipmap/icon_gou_n" />
+                        </LinearLayout>
+
+                    </com.lihang.ShadowLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#F6F9FB" />
+
+                    <TextView
+                        android:id="@+id/customer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/recharge_question"
+                        android:textColor="#06133C"
+                        android:textSize="12sp" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="13dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="充值說明："
+                            android:textColor="#52576B"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:lineSpacingExtra="5dp"
+                            android:text="@string/recharge_instructions_text0"
+                            android:textColor="#52576B"
+                            android:textSize="13sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineSpacingExtra="3dp"
+                            android:text="@string/recharge_instructions_text1"
+                            android:textColor="#52576B"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:lineSpacingExtra="5dp"
+                            android:text="@string/recharge_instructions_text2"
+                            android:textColor="#52576B"
+                            android:textSize="13sp" />
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/help"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="6dp"-->
+<!--                            android:lineSpacingExtra="5dp"-->
+<!--                            android:text="@string/recharge_instructions_text3"-->
+<!--                            android:textColor="#52576B"-->
+<!--                            android:textSize="13sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="@string/issue_top"-->
+<!--                            android:textColor="@color/C_333333"-->
+<!--                            android:textSize="15sp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/issue"-->
+<!--                            android:textColor="@color/C_333333"-->
+<!--                            android:textSize="15sp" />-->
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="12dp" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </com.android.liba.ui.widget.conner.BackgroundLinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#F6F9FB"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:text="@string/pay2"
+                android:textColor="#ff06133c"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/paymentAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left"
+                android:textColor="#ffea1e5c"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginRight="@dimen/left"
+                android:background="@drawable/btn"
+                android:gravity="center"
+
+                android:paddingLeft="45dp"
+                android:paddingRight="45dp"
+                android:text="@string/vip_open"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="item"
+            type="com.gys.play.entity.CommentInfo" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/select"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/icon_select_n"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    app:loadCircle="@{item.avatar}"
+                    tools:src="@drawable/bg_debug" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="@{item.user_name}"
+                            android:textColor="@color/C_333333"
+                            android:textSize="14sp"
+                            tools:text="昵称" />
+
+                        <ImageView
+                            android:id="@+id/vipIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="9dp"
+                            android:src="@mipmap/icon_vip_j"
+                            android:visibility="@{ item.isVip() ? View.VISIBLE :View.GONE}" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:text="@{item.getTime()+``}"
+                        android:textColor="@color/C_cecece"
+                        android:textSize="12sp"
+                        tools:text="刚刚" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/moreView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="14dp"
+                        android:src="@mipmap/icon_gengduo" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/contxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{item.content+``}"
+                android:textColor="@color/C_333333"
+                android:textSize="15sp"
+                tools:text="嘿嘿嘿" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/shape_rect_f2f2f2_8"
+                android:orientation="vertical"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="15dp"
+                android:visibility="@{item.followCommentCount > 0 ? View.VISIBLE :View.GONE}">
+
+                <com.mybase.libb.ui.rv.BaseItemRecyclerView
+                    android:id="@+id/birv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_item="@layout/item_comment_item"
+                    app:layout_scroll_enable="false" />
+
+                <TextView
+                    android:id="@+id/allText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="@{@string/item_all_comment(item.followCommentCount+``)+`>`}"
+                    android:textColor="@color/C_1782F7"
+                    android:textSize="12dp"
+                    android:visibility="@{item.followCommentCount > 1 ? View.VISIBLE :View.GONE}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="18dp"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:id="@+id/img_jubao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="6dp"
+                    android:src="@mipmap/icon_chapter_jubao_yj"
+                    app:layout_constraintTop_toBottomOf="@id/state" />
+                <TextView
+                    android:id="@+id/reply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/icon_pl"
+                    android:layout_marginLeft="50dp"
+                    android:drawablePadding="6dp"
+                    android:text="@{item.followCommentCount +``}" />
+
+                <TextView
+                    android:id="@+id/agree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="12dp"
+                    android:drawableLeft="@drawable/selector_agree"
+                    android:drawablePadding="6dp"
+                    android:text="@{item.agree_count+``}" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/bottomLine"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginHorizontal="12dp"
+                android:background="@color/C_f2f2f2" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

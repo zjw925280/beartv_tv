@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.drake.brv.PageRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/brvPage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:page_rv="@id/brvRV"
+    app:stateEnabled="true">
+
+    <com.mybase.libb.ui.rv.BaseItemRecyclerView
+        android:id="@+id/brvRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_lazy="true" />
+
+</com.drake.brv.PageRefreshLayout>

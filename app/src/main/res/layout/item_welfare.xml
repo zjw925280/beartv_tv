@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.gys.play.entity.WelfareInfo" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="17dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_task_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="标题咯"
+                    android:text="@{item.getTitleStr()}"
+                    android:textColor="@color/C_1A1A1A"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/icon_coin2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="@{`+`+item.coins}"
+                        android:textColor="@color/C_FEBB02"
+                        android:textSize="12sp" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="2dp"
+                        android:text="@string/give_coins"
+                        android:textColor="@color/C_999999"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="19dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{item.getProgressVisible()?View.VISIBLE:View.GONE}">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{item.getProgressText()}"
+                    android:textColor="@color/C_999999"
+                    android:textSize="10sp" />
+
+                <ProgressBar
+                    android:id="@+id/pb_layout"
+                    android:layout_width="50dp"
+                    android:layout_height="7dp"
+                    android:layout_marginTop="6dp"
+                    android:indeterminateOnly="false"
+                    tools:progress="50"
+                    android:progress="@{item.over_times}"
+                    android:max="@{item.total_times}"
+                    android:progressDrawable="@drawable/progress_task" />
+            </LinearLayout>
+
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/tv_go_task"
+                TaskStatusBg="@{item.task_status}"
+                android:layout_width="60dp"
+                android:layout_height="28dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                tools:text="去完成"
+                android:text="@{item.taskStatus()}"
+                android:textSize="12sp"
+                app:stv_corner="14dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

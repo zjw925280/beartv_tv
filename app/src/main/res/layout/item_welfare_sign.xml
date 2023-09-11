@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.gys.play.entity.SignInfo" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.android.liba.ui.widget.conner.BackgroundLinearLayout
+            android:id="@+id/layout"
+            android:layout_width="46dp"
+            android:layout_height="63dp"
+            android:layout_gravity="center"
+            app:bgColor="@color/C_FFEFED"
+            app:bgColor_p="@color/key_color"
+            app:conner="5dp"
+            app:isSelect="@{item.isSigned()}"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:visibility="@{item.isSigned()?View.VISIBLE:View.GONE}"
+                tools:visibility="visible"
+                android:src="@mipmap/icon_gx" />
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:visibility="@{item.isItemShowCoin()?View.VISIBLE:View.GONE}"
+                tools:visibility="gone"
+                android:src="@mipmap/icon_sb" />
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:visibility="@{item.isItemShowVip()?View.VISIBLE:View.GONE}"
+                tools:visibility="gone"
+                android:src="@mipmap/icon_vip_3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:gravity="center"
+                tools:text="10\nCoins"
+                android:text="@{item.getRewardStr()}"
+                android:textColor="@color/s_sign_key_white"
+                android:textSize="8sp" />
+
+        </com.android.liba.ui.widget.conner.BackgroundLinearLayout>
+
+    </FrameLayout>
+</layout>

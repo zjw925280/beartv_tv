@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.gys.play.entity.BtVideoInfo" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+        android:onClick="@{(view)-> item.goBookDetail(view)}"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="136dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                app:loadImageCenterCropWith4Radius="@{item.cover}" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:layout_marginTop="11dp"
+                android:text="@{item.title}"
+                android:textColor="@color/black_353535"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:text="@{item.freeLimt()}"
+                android:textColor="@color/C_999999"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/read_and_add_to"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="9dp"
+                android:gravity="center"
+                android:background="@drawable/selector_bookself_read_back"
+                android:text="@string/read_and_add"
+                android:textColor="@drawable/selector_c_white_black_text_color"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

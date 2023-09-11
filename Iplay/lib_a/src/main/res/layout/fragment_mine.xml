@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/C_F5F7FA"
+    android:orientation="vertical"
+    tools:context="com.android.app.component.home.MineFragment">
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="@string/setting_to_login"
+        android:visibility="gone"
+        android:textColor="@color/white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_common_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/shape_bg_round_solid_ffffff"/>
+</LinearLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="26dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/icon"-->
+            <!--                android:layout_width="18dp"-->
+            <!--                android:layout_height="18dp"-->
+            <!--                android:layout_marginRight="8dp"-->
+            <!--                tools:src="@drawable/bg_debug" />-->
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#06133C"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="标题" />
+
+            <TextView
+                android:id="@+id/btnViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/icon_tz"
+                android:drawablePadding="4dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:text="查看更多"
+                android:textColor="#52576B"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/titleLayout">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_margin="@dimen/dp_4"
+                android:layout_weight="1"
+                android:background="@drawable/selector_b_00acff_f6f9fb_30"
+                android:gravity="center"
+                android:text="必看榜"
+                android:textColor="@drawable/selector_c_white_52576b_text_color" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_margin="@dimen/dp_4"
+                android:layout_weight="1"
+                android:background="@drawable/selector_b_00acff_f6f9fb_30"
+                android:gravity="center"
+                android:text="新劇榜"
+                android:textColor="@drawable/selector_c_white_52576b_text_color" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_margin="@dimen/dp_4"
+                android:layout_weight="1"
+                android:background="@drawable/selector_b_00acff_f6f9fb_30"
+                android:gravity="center"
+                android:text="完結榜"
+                android:textColor="@drawable/selector_c_white_52576b_text_color" />
+        </LinearLayout>
+
+        <com.gys.play.ui.view.NovelItemRecyclerView
+            android:id="@+id/listRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:paddingHorizontal="6dp"
+            app:layout_constraintTop_toBottomOf="@id/type"
+            app:layout_grid_num="2"
+            app:layout_item="@layout/item_novel_single_3"
+            app:layout_scroll_enable="false"
+            app:layout_vertical="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

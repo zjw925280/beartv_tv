@@ -1,0 +1,23 @@
+// 最新稳定版信息 https://developer.android.com/jetpack/androidx/versions
+ext {
+
+    activityVersion = '1.4.0'
+    appCompatVersion = '1.4.1'
+    constraintLayoutVersion = '2.1.2'
+    coreTestingVersion = '2.1.0'
+    coroutines = '1.4.1'
+//    lifecycleVersion = '2.4.0' //会导致 import kotlinx.coroutines.flow.Flow 找不到
+    lifecycleVersion = '2.2.0'
+    materialVersion = '1.4.0'
+    roomVersion = '2.3.0'
+    // testing
+    junitVersion = '4.13.1'
+    espressoVersion = '3.1.0'
+    androidxJunitVersion = '1.1.2'
+
+
+
+    facebook_application_id ='443019541331077'
+    facebook_login_protocol_scheme ='fb443019541331077'
+
+}

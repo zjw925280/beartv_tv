@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="textStyle_n">
+        <flag name="normal" value="0" />
+        <flag name="bold" value="1" />
+        <flag name="italic" value="2" />
+    </attr>
+    <attr name="textStyle_p">
+        <flag name="normal" value="0" />
+        <flag name="bold" value="1" />
+        <flag name="italic" value="2" />
+    </attr>
+    <attr name="textColor_n" format="reference|color" />
+    <attr name="textColor_p" format="reference|color" />
+    <attr name="textSize_n" format="dimension" />
+    <attr name="textSize_p" format="dimension" />
+
+    <attr name="colors_orientation">
+        <enum name="TOP_BOTTOM" value="0" />
+        <enum name="TR_BL" value="1" />
+        <enum name="RIGHT_LEFT" value="2" />
+        <enum name="BR_TL" value="3" />
+        <enum name="BOTTOM_TOP" value="4" />
+        <enum name="BL_TR" value="5" />
+        <enum name="LEFT_RIGHT" value="6" />
+        <enum name="TL_BR" value="7" />
+    </attr>
+    <attr name="colors_start" format="color" />
+    <attr name="colors_center" format="color" />
+    <attr name="colors_end" format="color" />
+    <attr name="colors_start_p" format="color" />
+    <attr name="colors_center_p" format="color" />
+    <attr name="colors_end_p" format="color" />
+
+    <attr name="conner" format="dimension" />
+    <attr name="conner_left_top" format="dimension" />
+    <attr name="conner_left_bottom" format="dimension" />
+    <attr name="conner_right_top" format="dimension" />
+    <attr name="conner_right_bottom" format="dimension" />
+    <attr name="lineWidth" format="dimension" />
+    <attr name="lineColor" format="color" />
+<!--    already exist in other place-->
+<!--    <attr name="bgColor" format="color" />-->
+    <attr name="connerHalfWidth" format="boolean" />
+    <attr name="connerHalfHeight" format="boolean" />
+
+    <attr name="bgColor_p" format="color" />
+    <attr name="bgColor_n" format="color" />
+    <attr name="lineColor_p" format="color" />
+    <attr name="lineColor_n" format="color" />
+
+    <attr name="background_n" format="reference|color" />
+    <attr name="background_p" format="reference|color" />
+
+    <attr name="isOnlySelected" format="boolean" />
+
+    <attr name="text_n" format="string" />
+    <attr name="text_p" format="string" />
+
+    <declare-styleable name="BackgroundTextView">
+        <attr name="bgColor" />
+        <attr name="bgColor_p" />
+        <attr name="connerHalfWidth" />
+        <attr name="connerHalfHeight" />
+        <attr name="conner" />
+        <attr name="conner_left_top" />
+        <attr name="conner_left_bottom" />
+        <attr name="conner_right_top" />
+        <attr name="conner_right_bottom" />
+        <attr name="lineColor" />
+        <attr name="lineColor_p" />
+        <attr name="lineWidth" />
+        <attr name="colors_orientation" />
+        <attr name="colors_start" />
+        <attr name="colors_start_p" />
+        <attr name="colors_center" />
+        <attr name="colors_center_p" />
+        <attr name="colors_end" />
+        <attr name="colors_end_p" />
+    </declare-styleable>
+    <declare-styleable name="BackgroundLinearLayout">
+        <attr name="bgColor" />
+        <attr name="bgColor_p" />
+        <attr name="connerHalfWidth" />
+        <attr name="connerHalfHeight" />
+        <attr name="conner" />
+        <attr name="conner_left_top" />
+        <attr name="conner_left_bottom" />
+        <attr name="conner_right_top" />
+        <attr name="conner_right_bottom" />
+        <attr name="lineColor" />
+        <attr name="lineColor_p" />
+        <attr name="lineWidth" />
+        <attr name="colors_orientation" />
+        <attr name="colors_start" />
+        <attr name="colors_start_p" />
+        <attr name="colors_center" />
+        <attr name="colors_center_p" />
+        <attr name="colors_end" />
+        <attr name="colors_end_p" />
+    </declare-styleable>
+
+    <declare-styleable name="BackgroundFrameLayout">
+        <attr name="bgColor" />
+        <attr name="bgColor_p" />
+        <attr name="connerHalfWidth" />
+        <attr name="connerHalfHeight" />
+        <attr name="conner" />
+        <attr name="conner_left_top" />
+        <attr name="conner_left_bottom" />
+        <attr name="conner_right_top" />
+        <attr name="conner_right_bottom" />
+        <attr name="lineColor" />
+        <attr name="lineColor_p" />
+        <attr name="lineWidth" />
+        <attr name="colors_orientation" />
+        <attr name="colors_start" />
+        <attr name="colors_start_p" />
+        <attr name="colors_center" />
+        <attr name="colors_center_p" />
+        <attr name="colors_end" />
+        <attr name="colors_end_p" />
+    </declare-styleable>
+
+    <declare-styleable name="BackgroundEditText">
+        <attr name="bgColor" />
+        <attr name="bgColor_p" />
+        <attr name="connerHalfWidth" />
+        <attr name="connerHalfHeight" />
+        <attr name="conner" />
+        <attr name="conner_left_top" />
+        <attr name="conner_left_bottom" />
+        <attr name="conner_right_top" />
+        <attr name="conner_right_bottom" />
+        <attr name="lineColor" />
+        <attr name="lineColor_p" />
+        <attr name="lineWidth" />
+        <attr name="colors_orientation" />
+        <attr name="colors_start" />
+        <attr name="colors_start_p" />
+        <attr name="colors_center" />
+        <attr name="colors_center_p" />
+        <attr name="colors_end" />
+        <attr name="colors_end_p" />
+    </declare-styleable>
+
+    <declare-styleable name="BackgroundButton">
+        <attr name="bgColor" />
+        <attr name="bgColor_p" />
+        <attr name="connerHalfWidth" />
+        <attr name="connerHalfHeight" />
+        <attr name="conner" />
+        <attr name="conner_left_top" />
+        <attr name="conner_left_bottom" />
+        <attr name="conner_right_top" />
+        <attr name="conner_right_bottom" />
+        <attr name="lineColor" />
+        <attr name="lineColor_p" />
+        <attr name="lineWidth" />
+        <attr name="colors_orientation" />
+        <attr name="colors_start" />
+        <attr name="colors_start_p" />
+        <attr name="colors_center" />
+        <attr name="colors_center_p" />
+        <attr name="colors_end" />
+        <attr name="colors_end_p" />
+    </declare-styleable>
+    <declare-styleable name="BackgroundConstraintLayout">
+        <attr name="bgColor" />
+        <attr name="bgColor_p" />
+        <attr name="connerHalfWidth" />
+        <attr name="connerHalfHeight" />
+        <attr name="conner" />
+        <attr name="conner_left_top" />
+        <attr name="conner_left_bottom" />
+        <attr name="conner_right_top" />
+        <attr name="conner_right_bottom" />
+        <attr name="lineColor" />
+        <attr name="lineColor_p" />
+        <attr name="lineWidth" />
+        <attr name="colors_orientation" />
+        <attr name="colors_start" />
+        <attr name="colors_start_p" />
+        <attr name="colors_center" />
+        <attr name="colors_center_p" />
+        <attr name="colors_end" />
+        <attr name="colors_end_p" />
+    </declare-styleable>
+    <declare-styleable name="TipView">
+        <attr name="textColor_n" />
+        <attr name="textColor_p" />
+        <attr name="textStyle_n" />
+        <attr name="textStyle_p" />
+        <attr name="textSize_n" />
+        <attr name="textSize_p" />
+    </declare-styleable>
+
+    <declare-styleable name="SelectorImage">
+        <attr name="src_n" format="reference" />
+        <attr name="src_p" format="reference" />
+        <attr name="background_n" />
+        <attr name="background_p" />
+        <attr name="isOnlySelected" />
+    </declare-styleable>
+
+    <declare-styleable name="SelectorTextView">
+        <attr name="textColor_n" />
+        <attr name="textColor_p" />
+        <attr name="textStyle_n" />
+        <attr name="textStyle_p" />
+        <attr name="textSize_n" />
+        <attr name="textSize_p" />
+        <attr name="background_n" />
+        <attr name="background_p" />
+        <attr name="text_n" />
+        <attr name="text_p" />
+        <attr name="isOnlySelected" />
+    </declare-styleable>
+
+    <declare-styleable name="RadioGroupLayout_Layout">
+        <attr name="layout_ignoreSelect" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RadioGroupView">
+        <attr name="rg_size" format="dimension" />
+        <attr name="rg_space" format="dimension" />
+        <attr name="rg_count" format="integer" />
+        <attr name="rg_select_position" format="integer" />
+        <attr name="rg_color_n" format="color" />
+        <attr name="rg_color_p" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="Shadow">
+        <attr name="connerHalfWidth" />
+        <attr name="connerHalfHeight" />
+        <attr name="conner" />
+        <attr name="shadowColor" format="color" />
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="shadowSingle" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ConnerImageView">
+        <attr name="conner" />
+    </declare-styleable>
+
+</resources>

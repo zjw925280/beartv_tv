@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:hl_cornerRadius="12dp"
+    app:hl_layoutBackground="@color/white"
+    app:hl_shadowHidden="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivThumb"
+            android:layout_width="60dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="10dp"
+            android:text="該內容為付費內容，\n購買VIP可免費觀看"
+            android:textColor="#ff06133c"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toRightOf="@id/ivThumb"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivThumb" />
+
+        <com.coorchice.library.SuperTextView
+            android:id="@+id/tvExit"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:text="退出"
+            android:textColor="#52576B"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/ivThumb"
+            app:layout_constraintTop_toBottomOf="@id/ivThumb"
+            app:stv_corner="13dp"
+            app:stv_solid="#F6F9FB" />
+
+        <com.coorchice.library.SuperTextView
+            android:id="@+id/goVip"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:text="購買VIP"
+            android:textColor="@color/white"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivThumb"
+            app:stv_corner="13dp"
+            app:stv_solid="#F6632F" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.lihang.ShadowLayout>

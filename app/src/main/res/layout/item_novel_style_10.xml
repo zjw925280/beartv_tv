@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginRight="8dp"
+                tools:src="@drawable/bg_debug"/>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                tools:text="标题"
+                android:textStyle="bold"
+                android:textColor="@color/C_333333"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/btnViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                android:textColor="@color/C_CECECE"
+                android:textSize="12sp"
+                android:drawablePadding="4dp"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="6dp"
+                android:drawableRight="@mipmap/icon_more"/>
+
+        </LinearLayout>
+
+        <com.gys.play.ui.view.NovelItemRecyclerView
+            android:id="@+id/listRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:paddingHorizontal="6dp"
+            app:layout_grid_num="2"
+            app:layout_item="@layout/item_novel_single_5"
+            app:layout_constraintTop_toBottomOf="@id/titleLayout"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

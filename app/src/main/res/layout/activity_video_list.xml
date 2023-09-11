@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.video.VideoListActivity">
+
+        <com.drake.statelayout.StateLayout
+            android:id="@+id/state"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="h,360:203"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <com.gys.play.ui.video.MyVideoPlayer
+                android:id="@+id/player"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.drake.statelayout.StateLayout>
+
+        <LinearLayout
+            android:id="@+id/lly_mi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/state">
+
+
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/mi"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+
+            <ImageView
+                android:id="@+id/img_jubao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:src="@mipmap/icon_chapter_jubao_yj"
+                app:layout_constraintTop_toBottomOf="@id/state" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#EFF2FD"
+            app:layout_constraintTop_toBottomOf="@+id/lly_mi" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lly_mi" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

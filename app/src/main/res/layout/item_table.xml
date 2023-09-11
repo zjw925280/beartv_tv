@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.view.Gravity" />
+
+        <variable
+            name="item"
+            type="com.gys.play.entity.ClassifyLabel" />
+
+    </data>
+
+<!--    app:hl_layoutBackground_true="@color/C_E7FBF3"-->
+    <com.lihang.ShadowLayout
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginBottom="10dp"
+        android:clickable="false"
+        android:paddingHorizontal="12dp"
+        app:hl_cornerRadius="12.5dp"
+        app:hl_layoutBackground="@color/transparent"
+        app:hl_shadowHidden="true"
+        app:hl_shapeMode="selected">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textSize="14dp" />
+
+    </com.lihang.ShadowLayout>
+
+
+</layout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lihang.ShadowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:hl_cornerRadius="12dp"
+    app:hl_layoutBackground="@color/white"
+    app:hl_shadowHidden="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="刪除確認"
+            android:textColor="#ff06133c"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginHorizontal="30dp"
+            android:text="刪除您的評論後，所有的用戶將看\n不到該評論，確定要刪除嗎？"
+            android:textColor="#ff52576b"
+            android:textSize="15sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginBottom="20dp">
+
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/tvSubmit"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="確認刪除"
+                android:textColor="#52576B"
+                android:textSize="16dp"
+                app:stv_corner="18dp"
+                app:stv_solid="#F6F9FB" />
+
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/tvCancel"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="22dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="再想想"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:stv_corner="18dp"
+                app:stv_solid="#00ACFF" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</com.lihang.ShadowLayout>

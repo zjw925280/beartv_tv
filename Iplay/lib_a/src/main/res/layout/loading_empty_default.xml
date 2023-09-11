@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvErrorIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:drawableTop="@mipmap/loading_empty"
+        android:drawablePadding="15dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/C_999999"
+        android:textSize="14dp"
+        tools:text="nothing" />
+
+</RelativeLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.gys.play.wow.WowPlayer
+        android:id="@+id/wow_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <LinearLayout
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="40dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:id="@+id/addSubscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.lihang.ShadowLayout
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="8dp"
+                android:padding="1dp"
+                app:clickable="false"
+                app:hl_cornerRadius="30dp"
+                app:hl_layoutBackground="@color/transparent"
+                app:hl_shadowHidden="true"
+                app:hl_strokeColor="@color/white"
+                app:hl_strokeWith="1dp">
+
+                <ImageView
+                    android:id="@+id/ivUser"
+                    android:layout_width="43dp"
+                    android:layout_height="43dp" />
+            </com.lihang.ShadowLayout>
+
+
+            <ImageView
+                android:id="@+id/ivSubscribeTag"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:src="@mipmap/icon_blue_add_like" />
+
+        </FrameLayout>
+
+        <com.gys.play.wow.like.LikeButton
+            android:id="@+id/likeLayout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            app:icon_size="32dp" />
+
+        <TextView
+            android:id="@+id/tvDianZan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="12dp" />
+
+        <LinearLayout
+            android:id="@+id/llComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_comment_white" />
+
+            <TextView
+                android:id="@+id/tvComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:textColor="#fff"
+                android:textSize="12dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_share_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="@string/share"
+                android:textColor="#fff"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.mybase.libb.ui.scale.ScaleFrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="40dp"
+        app:width_scale="0.6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#fff"
+                android:textSize="16dp" />
+
+            <com.mybase.libb.ui.scale.ScaleFrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:height_scale="0.55">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:scrollbarThumbVertical="@color/white">
+
+                    <com.ctetin.expandabletextviewlibrary.ExpandableTextView
+                        android:id="@+id/tvTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4dp"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        app:ep_contract_color="@color/C_00ACFF"
+                        app:ep_contract_text="收起"
+                        app:ep_end_color="@color/C_00ACFF"
+                        app:ep_expand_color="@color/C_00ACFF"
+                        app:ep_expand_text="...展开"
+                        app:ep_max_line="3"
+                        app:ep_need_always_showright="true"
+                        app:ep_need_animation="true"
+                        app:ep_need_contract="true"
+                        app:ep_need_expand="true"
+                        app:ep_need_link="false"
+                        app:ep_need_mention="false" />
+
+
+                </ScrollView>
+
+
+            </com.mybase.libb.ui.scale.ScaleFrameLayout>
+
+
+        </LinearLayout>
+
+    </com.mybase.libb.ui.scale.ScaleFrameLayout>
+
+</FrameLayout>

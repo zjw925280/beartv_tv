@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="trans">#00000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="base_text_color_primary">@color/white</color>
+    <color name="C_333333">#333333</color>
+    <color name="C_3A82FC">#3A82FC</color>
+    <color name="C_999999">#999999</color>
+    <color name="C_666666">#666666</color>
+    <color name="dialog_bg">#a6000000</color>
+    <color name="bgB8000000">#B8000000</color>
+    <color name="C_DFDFDF">#DFDFDF</color>
+    <color name="C_F5F7FA">#F5F7FA</color>
+    <color name="C_222222">#222222</color>
+    <color name="C_cccccc">#cccccc</color>
+    <color name="C_B1B3B3">#B1B3B3</color>
+    <color name="C_BBBBBB">#BBBBBB</color>
+    <color name="C_dddddd">#dddddd</color>
+    <color name="C_555555">#555555</color>
+    <color name="border_text">#242433</color>
+
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RatingBarCustom">
+        <attr name="rbc_star_p" format="reference|color" />
+        <attr name="rbc_star_n" format="reference|color" />
+        <attr name="rbc_num" format="integer" />
+        <attr name="rbc_max" format="integer" />
+        <attr name="rbc_spacing" format="dimension" />
+    </declare-styleable>
+</resources>
