@@ -17,7 +17,7 @@ import com.gys.play.viewmodel.NovelBasePresent
 import java.io.File
 
 const val IS_SHOW_TOP = "IS_SHOW_TOP"
-
+var sss="jiushizheg"
 class AuthorWebActivity :
     NovelBaseActivity<NovelBasePresent<AuthorWebActivity>, ActivityAuthorWebBinding>(R.layout.activity_author_web) {
     companion object {
